@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <title>API</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Check your Personality</h1>
+            <div class="maindiv">
+                <form>
+                    <label>Enter your Name</label><br>
+                    <input type="text" id="username"  class="username" placeholder="Name...">
+                </form>
+                <div class="imgdiv" id="imgdiv">
+                    <img src="avt.jpg" id="avatar" class="avatar">
+                </div>
+                <button id="clickmebtn" class="clickmebtn">Click Me</button>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $("#clickmebtn").click(function() {
+                    var name = $("#username").val();
+                    $("#avatar").attr({
+                        "src":`https://joeschmoe.io/api/v1/${name}`
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
